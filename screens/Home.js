@@ -19,20 +19,24 @@ export default class HomeScreen extends Component {
             <View style={styles.container}>
                 <SafeAreaView style={styles.droidSafeArea} />
 
-                { <BackgroundImage
+                 <ImageBackground 
                         source={require('../assets/stars.gif')} 
                         style={styles.backgroundImage}> 
-                }
+                
+
                     <View style={styles.titleBar}>
                         <Image source={require("../assets/main-icon.png")} style={{ width: 150, height: 150 }}></Image>
                         <Text style={styles.titleText}>App</Text>
                         <Text style={styles.titleText}>Estelar</Text>
                     </View>
 
-                    { <TouchableOpacity 
+                     <TouchableOpacity 
                           style={styles.routeCard} onPress={() =>
                         this.props.navigation.navigate("SpaceCraft")
-                    }> }                    
+                    }>            
+                        <Text style={styles.routeText}>Naves Espaciais</Text>
+                        <Image source={require("../assets/space_crafts.png")} style={styles.routeImage}></Image>
+                    </TouchableOpacity>
 
                     <TouchableOpacity style={styles.routeCard} onPress={() =>
                         this.props.navigation.navigate("StarMap")
